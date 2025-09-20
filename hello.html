@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>你好 新世界</title>
+    <style>
+        body { text-align: center; }
+        #video-container { margin-top: 20px; }
+        video { 
+            max-width: 40%; 
+            height: auto; 
+            display: block; /* 確保 video 是區塊元素 */
+            margin: 0 auto; /* 設定左右邊界為 auto 來達成水平置中 */
+        }
+        .btn { padding: 10px 20px; font-size: 16px; margin: 5px; border: none; color: white; cursor: pointer; border-radius: 5px; }
+        #btn1 { background-color: #4CAF50; } /* Green */
+        #btn2 { background-color: #008CBA; } /* Blue */
+        #btn3 { background-color: #f44336; } /* Red */
+    </style>
 </head>
 <body>
     <h1 id="greeting"></h1>
+
+    <div id="button-container">
+        <button id="btn1" class="btn">胡說</button>
+        <button id="btn2" class="btn">女音</button>
+        <button id="btn3" class="btn">無言</button>
+    </div>
+
+    <div id="video-container">
+        <video id="videoPlayer" controls style="display:none;">
+            <source id="videoSource" src="" type="video/mp4">
+            你的瀏覽器不支援 video 標籤。
+        </video>
+    </div>
+
     <script src="hello.js"></script>
 </body>
 </html>

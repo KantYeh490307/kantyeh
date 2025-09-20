@@ -1,11 +1,9 @@
-// 將訊息排成三行，置中顯示並放大字體
+// 將訊息顯示並放大字體
 const greeting = document.getElementById('greeting');
-greeting.innerHTML = `你好 新世界<br>我是 Kant Yeh<br>使用 VS 寫的第一個網頁`;
-greeting.style.textAlign = 'center';
-greeting.style.fontSize = '2em';
-greeting.style.marginTop = '10vh'; // 調整間距
+greeting.innerHTML = `青鳥飛出來`;
+greeting.style.fontSize = '3em'; // 放大字體 (2em * 150% = 3em)
 
-// --- 新增的影片播放程式碼 ---
+// --- 影片播放程式碼 (此部分不需修改) ---
 
 // 取得按鈕和影片播放器元素
 const btn1 = document.getElementById('btn1');
@@ -13,6 +11,7 @@ const btn2 = document.getElementById('btn2');
 const btn3 = document.getElementById('btn3');
 const videoPlayer = document.getElementById('videoPlayer');
 const videoSource = document.getElementById('videoSource');
+const videoPlaceholder = document.getElementById('videoPlaceholder'); // 取得預留位置元素
 
 // 影片檔案名稱 (假設影片放在同一個資料夾)
 const videos = {
@@ -23,6 +22,7 @@ const videos = {
 
 // 播放影片的函式
 function playVideo(videoFile) {
+    videoPlaceholder.style.display = 'none'; // 隱藏預留位置
     videoPlayer.style.display = 'block'; // 顯示播放器
     videoSource.src = videoFile;
     videoPlayer.load(); // 重新載入影片
